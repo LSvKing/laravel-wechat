@@ -1,8 +1,6 @@
 <?php
 namespace LSvKing\Wechat;
 
-use Illuminate\Support\Facades\Config as Config;
-use Illuminate\Support\Facades\Cache as Cache;
 /**
  *	微信公众平台PHP-SDK, 官方API部分
  *  @author  dodge <dodgepudding@gmail.com>
@@ -210,12 +208,13 @@ class Wechat
 
 	public function __construct($options)
 	{
-		$this->token = isset($options['token'])?$options['token']:'';
-		$this->encodingAesKey = isset($options['encodingaeskey'])?$options['encodingaeskey']:'';
-		$this->appid = isset($options['appid'])?$options['appid']:'';
-		$this->appsecret = isset($options['appsecret'])?$options['appsecret']:'';
-		$this->debug = isset($options['debug'])?$options['debug']:false;
-		$this->logcallback = isset($options['logcallback'])?$options['logcallback']:false;
+		$opt = is_array($options)?$options:Config::get('wechat::wechat.'.$options);
+		$this->token            = isset($opt['token'])?$opt['token']:'';
+		$this->encodingAesKey   = isset($opt['encodingaeskey'])?$opt['encodingaeskey']:'';
+		$this->appid            = isset($opt['appid'])?$opt['appid']:'';
+		$this->appsecret        = isset($opt['appsecret'])?$opt['appsecret']:'';
+		$this->debug            = isset($opt['debug'])?$opt['debug']:false;
+		$this->logcallback      = isset($opt['logcallback'])?$opt['logcallback']:false;
 	}
 
 	/**
