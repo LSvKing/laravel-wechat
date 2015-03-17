@@ -1,5 +1,5 @@
 {
-    "name": "lsvking/wechat",
+    "name": "lsvking/laravel-wechat",
     "keywords": ["laravel", "weixin", "wechat"],
     "license": "MIT",
     "description": "Wechat SDK for Laravel 5",
