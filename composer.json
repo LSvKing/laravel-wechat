@@ -1,0 +1,22 @@
+{
+    "name": "lsvking/wechat",
+    "keywords": ["laravel", "weixin", "wechat"],
+    "license": "MIT",
+    "description": "Wechat SDK for Laravel 5",
+    "authors": [
+        {
+            "name": "lsvking",
+            "email": "lsvking@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "LSvKing\\Wechat\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
